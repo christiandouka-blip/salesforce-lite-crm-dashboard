@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Salesforce Clone</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- SPA root. Screens are mounted/shown inside #app by js/script.js -->
+  <div id="app">
+
+    <!-- ===================== SCREEN: login-main ===================== -->
+    <section class="screen" id="screen-login-main" data-screen="login-main">
+      <div class="login-page">
+
+        <!-- ---------- LEFT COLUMN: login panel ---------- -->
+        <div class="login-col">
+          <div class="login-inner">
+
+            <!-- Salesforce cloud logo + muted "Clone" caption beneath the logo -->
+            <div class="brand">
+              <svg class="brand-cloud" viewBox="0 0 150 106" role="img" aria-label="Salesforce">
+                <g fill="#00A1E0">
+                  <circle cx="58" cy="35" r="30"></circle>
+                  <circle cx="99" cy="31" r="28"></circle>
+                  <circle cx="125" cy="57" r="25"></circle>
+                  <circle cx="27" cy="59" r="23"></circle>
+                  <circle cx="45" cy="83" r="21"></circle>
+                  <circle cx="75" cy="89" r="23"></circle>
+                  <circle cx="104" cy="83" r="21"></circle>
+                  <ellipse cx="76" cy="59" rx="51" ry="35"></ellipse>
+                </g>
+                <text x="75" y="66" text-anchor="middle" fill="#ffffff"
+                      font-family="Helvetica, Arial, sans-serif" font-size="21"
+                      font-weight="700" font-style="italic" letter-spacing="-0.9">salesforce</text>
+              </svg>
+              <span class="brand-clone">Clone</span>
+            </div>
+
+            <!-- Login card -->
+            <div class="login-card">
+              <h1 class="card-title">Salesforce login</h1>
+
+              <!-- Inline notice area (used only for the approved Privacy message) -->
+              <div class="notice" id="login-notice" hidden></div>
+
+              <form id="login-form" novalidate>
+                <div class="field">
+                  <label for="username">Username</label>
+                  <div class="input-wrap">
+                    <input type="text" id="username" name="username" autocomplete="username" />
+                    <span class="input-key" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="15" height="15">
+                        <path fill="#333" d="M14 3a5 5 0 0 0-4.9 6H3v3h2v2h2v-2h2.1A5 5 0 1 0 14 3zm2.5 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="9" height="9" class="caret">
+                        <path fill="#333" d="M7 10l5 5 5-5z"/>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="password">Password</label>
+                  <div class="input-wrap">
+                    <input type="password" id="password" name="password" autocomplete="current-password" />
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="login-btn">Log In</button>
+
+                <label class="remember">
+                  <input type="checkbox" id="remember-me" />
+                  <span>Remember me</span>
+                </label>
+
+                <hr class="card-sep" />
+
+                <div class="card-links">
+                  <a href="#" class="link" data-route="forgot-password">Forgot Your Password?</a>
+                  <a href="#" class="link" data-route="custom-domain">Use Custom Domain</a>
+                </div>
+
+                <div class="divider"><span>or</span></div>
+
+                <button type="button" class="btn btn-primary btn-block btn-email" data-route="use-email-address">
+                  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                    <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/>
+                  </svg>
+                  <span>Log In with Email</span>
+                </button>
+              </form>
+            </div>
+
+            <!-- Below card: Not a customer / Try for Free -->
+            <div class="signup-row">
+              <span>Not a customer?</span>
+              <button type="button" class="btn btn-outline" data-route="free-crm-signup">Try for Free</button>
+            </div>
+
+            <!-- Footer -->
+            <p class="footer-copy">
+              &copy; 2026 Salesforce, Inc. All rights reserved. |
+              <a href="#" class="link" id="privacy-link">Privacy</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- ---------- RIGHT COLUMN: marketing ---------- -->
+        <div class="marketing-col">
+          <!-- decorative background shapes -->
+          <span class="decor decor-circle" aria-hidden="true"></span>
+          <span class="decor decor-ring" aria-hidden="true"></span>
+          <span class="decor decor-band" aria-hidden="true"></span>
+
+          <div class="marketing-inner">
+            <h2 class="marketing-title">Get Salesforce for free. No credit card required, no software to install.</h2>
+
+            <p class="marketing-sub">With your free CRM, you get:</p>
+
+            <ul class="benefits">
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>Up to 2 users with no time limits</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>Quick and easy set-up with guided onboarding</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>Sales, service, and email marketing together in one place</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>A free Slack workspace for collaborating with partners</span>
+              </li>
+            </ul>
+
+            <button type="button" class="btn btn-primary btn-getcrm" data-route="free-crm-signup">Get free CRM</button>
+
+            <!-- Dashboard preview (recreated in HTML/CSS) -->
+            <div class="dash-preview" aria-hidden="true">
+
+              <!-- Main Lightning window -->
+              <div class="dash-window">
+                <div class="dash-nav">
+                  <span class="dash-cloud"></span>
+                  <span class="dash-waffle">
+                    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  </span>
+                  <span class="dash-app">Sales</span>
+                  <span class="dash-tabs">
+                    <span>Home</span><span>Campaigns</span><span>Leads</span><span>Accounts</span><span class="active">Opportunities</span><span>Contacts</span><span>Forecasts</span><span>Files</span><span>Dashboards</span><span>Quotes</span>
+                  </span>
+                  <span class="dash-search">&#9906;</span>
+                </div>
+
+                <div class="dash-subhead">
+                  <div class="dash-subleft">
+                    <span class="dash-objicon"></span>
+                    <div>
+                      <div class="dash-objlabel">Opportunities</div>
+                      <div class="dash-listtitle">My Open Deals &#9662;</div>
+                    </div>
+                  </div>
+                  <div class="dash-actions"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+
+                <div class="dash-board">
+                  <div class="dash-stage">
+                    <div class="stage-head">Proposal (2)</div>
+                    <div class="stage-total">$3,892,499</div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                  </div>
+                  <div class="dash-stage">
+                    <div class="stage-head">Negotiation (2)</div>
+                    <div class="stage-total">$420,000</div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                  </div>
+                  <div class="dash-stage">
+                    <div class="stage-head">Closed Won (2)</div>
+                    <div class="stage-total">$355,000</div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Einstein Alerts overlay card -->
+              <div class="einstein-card">
+                <div class="einstein-head">
+                  <span class="einstein-title">Einstein Alerts</span>
+                </div>
+                <div class="einstein-body">
+                  <span class="einstein-crown">&#128081;</span>
+                  <p class="einstein-text">This deal is ready to close.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- =================== END SCREEN: login-main =================== -->
+
+    <!-- ===================== SCREEN: forgot-password ===================== -->
+    <section class="screen" id="screen-forgot-password" data-screen="forgot-password">
+      <div class="fp-page">
+        <div class="fp-inner">
+
+          <!-- Salesforce cloud logo + muted "Clone" caption (consistent with login-main / PRD) -->
+          <div class="brand">
+            <svg class="brand-cloud" viewBox="0 0 150 106" role="img" aria-label="Salesforce">
+              <g fill="#00A1E0">
+                <circle cx="58" cy="35" r="30"></circle>
+                <circle cx="99" cy="31" r="28"></circle>
+                <circle cx="125" cy="57" r="25"></circle>
+                <circle cx="27" cy="59" r="23"></circle>
+                <circle cx="45" cy="83" r="21"></circle>
+                <circle cx="75" cy="89" r="23"></circle>
+                <circle cx="104" cy="83" r="21"></circle>
+                <ellipse cx="76" cy="59" rx="51" ry="35"></ellipse>
+              </g>
+              <text x="75" y="66" text-anchor="middle" fill="#ffffff"
+                    font-family="Helvetica, Arial, sans-serif" font-size="21"
+                    font-weight="700" font-style="italic" letter-spacing="-0.9">salesforce</text>
+            </svg>
+            <span class="brand-clone">Clone</span>
+          </div>
+
+          <h1 class="fp-title">Reset Your Password</h1>
+
+          <!-- Reset card -->
+          <div class="fp-card">
+            <!-- Inline confirmation shown after Continue with a filled username -->
+            <div class="notice" id="fp-notice" hidden></div>
+
+            <p class="fp-text">We'll send you an email, and then verify your identity.</p>
+            <a href="#" class="link fp-help" data-route="how-do-i-verify-identity">How do I verify my identity?</a>
+            <p class="fp-text fp-text-help">Need help? Contact your Salesforce admin.</p>
+
+            <form id="forgot-form" novalidate>
+              <div class="field fp-field">
+                <div class="input-wrap">
+                  <input type="text" id="fp-username" name="fp-username" placeholder="Enter your username..." autocomplete="username" />
+                </div>
+              </div>
+
+              <div class="fp-actions">
+                <button type="button" class="btn btn-outline" data-route="login-main">Cancel</button>
+                <button type="submit" class="btn btn-primary" id="fp-continue">Continue</button>
+              </div>
+            </form>
+
+            <div class="divider fp-divider"><span>Forgot your username?</span></div>
+
+            <button type="button" class="btn btn-primary btn-block btn-email" data-route="use-email-address">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/>
+              </svg>
+              <span>Use Your Email Address</span>
+            </button>
+          </div>
+
+          <p class="fp-footer">&copy; 2026 Salesforce, Inc. All rights reserved.</p>
+        </div>
+      </div>
+    </section>
+    <!-- =================== END SCREEN: forgot-password =================== -->
+
+    <!-- Blank shells for SCREEN_MAP destinations not built yet (no content) -->
+    <!-- ===================== SCREEN: custom-domain ===================== -->
+    <section class="screen" id="screen-custom-domain" data-screen="custom-domain">
+      <div class="cd-page">
+
+        <!-- ---------- LEFT COLUMN: custom domain panel ---------- -->
+        <div class="cd-left">
+          <div class="cd-inner">
+
+            <!-- Salesforce cloud logo + muted "Clone" caption (PRD branding consistency) -->
+            <div class="brand">
+              <svg class="brand-cloud" viewBox="0 0 150 106" role="img" aria-label="Salesforce">
+                <g fill="#00A1E0">
+                  <circle cx="58" cy="35" r="30"></circle>
+                  <circle cx="99" cy="31" r="28"></circle>
+                  <circle cx="125" cy="57" r="25"></circle>
+                  <circle cx="27" cy="59" r="23"></circle>
+                  <circle cx="45" cy="83" r="21"></circle>
+                  <circle cx="75" cy="89" r="23"></circle>
+                  <circle cx="104" cy="83" r="21"></circle>
+                  <ellipse cx="76" cy="59" rx="51" ry="35"></ellipse>
+                </g>
+                <text x="75" y="66" text-anchor="middle" fill="#ffffff"
+                      font-family="Helvetica, Arial, sans-serif" font-size="21"
+                      font-weight="700" font-style="italic" letter-spacing="-0.9">salesforce</text>
+              </svg>
+              <span class="brand-clone">Clone</span>
+            </div>
+
+            <h1 class="cd-title">Use Custom Domain</h1>
+
+            <!-- Custom domain card -->
+            <div class="cd-card">
+              <!-- Inline notice (Privacy message / Continue confirmation) -->
+              <div class="notice cd-notice" id="cd-notice" hidden></div>
+
+              <p class="cd-text">To go to your company's login page, enter the custom domain name.</p>
+
+              <form id="domain-form" novalidate>
+                <div class="field cd-field">
+                  <label for="cd-domain">Custom Domain</label>
+                  <div class="input-wrap">
+                    <input type="text" id="cd-domain" name="cd-domain" autocomplete="off" />
+                  </div>
+                </div>
+
+                <p class="cd-hint">https:// <i>domain</i>.my.salesforce.com</p>
+
+                <div class="cd-actions">
+                  <button type="button" class="btn btn-outline" data-route="login-main">Back</button>
+                  <button type="submit" class="btn btn-primary" id="cd-continue">Continue</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Footer -->
+            <p class="footer-copy">
+              &copy; 2026 Salesforce, Inc. All rights reserved. |
+              <a href="#" class="link" id="cd-privacy-link">Privacy</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- ---------- RIGHT COLUMN: marketing (replicated from login-main) ---------- -->
+        <div class="marketing-col">
+          <!-- decorative background shapes -->
+          <span class="decor decor-circle" aria-hidden="true"></span>
+          <span class="decor decor-ring" aria-hidden="true"></span>
+          <span class="decor decor-band" aria-hidden="true"></span>
+
+          <div class="marketing-inner">
+            <h2 class="marketing-title">Get Salesforce for free. No credit card required, no software to install.</h2>
+
+            <p class="marketing-sub">With your free CRM, you get:</p>
+
+            <ul class="benefits">
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>Up to 2 users with no time limits</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>Quick and easy set-up with guided onboarding</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>Sales, service, and email marketing together in one place</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>A free Slack workspace for collaborating with partners</span>
+              </li>
+            </ul>
+
+            <button type="button" class="btn btn-primary btn-getcrm" data-route="free-crm-signup">Get free CRM</button>
+
+            <!-- Dashboard preview (recreated in HTML/CSS) -->
+            <div class="dash-preview" aria-hidden="true">
+
+              <!-- Main Lightning window -->
+              <div class="dash-window">
+                <div class="dash-nav">
+                  <span class="dash-cloud"></span>
+                  <span class="dash-waffle">
+                    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  </span>
+                  <span class="dash-app">Sales</span>
+                  <span class="dash-tabs">
+                    <span>Home</span><span>Campaigns</span><span>Leads</span><span>Accounts</span><span class="active">Opportunities</span><span>Contacts</span><span>Forecasts</span><span>Files</span><span>Dashboards</span><span>Quotes</span>
+                  </span>
+                  <span class="dash-search">&#9906;</span>
+                </div>
+
+                <div class="dash-subhead">
+                  <div class="dash-subleft">
+                    <span class="dash-objicon"></span>
+                    <div>
+                      <div class="dash-objlabel">Opportunities</div>
+                      <div class="dash-listtitle">My Open Deals &#9662;</div>
+                    </div>
+                  </div>
+                  <div class="dash-actions"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+
+                <div class="dash-board">
+                  <div class="dash-stage">
+                    <div class="stage-head">Proposal (2)</div>
+                    <div class="stage-total">$3,892,499</div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                  </div>
+                  <div class="dash-stage">
+                    <div class="stage-head">Negotiation (2)</div>
+                    <div class="stage-total">$420,000</div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                  </div>
+                  <div class="dash-stage">
+                    <div class="stage-head">Closed Won (2)</div>
+                    <div class="stage-total">$355,000</div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Einstein Alerts overlay card -->
+              <div class="einstein-card">
+                <div class="einstein-head">
+                  <span class="einstein-title">Einstein Alerts</span>
+                </div>
+                <div class="einstein-body">
+                  <span class="einstein-crown">&#128081;</span>
+                  <p class="einstein-text">This deal is ready to close.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- =================== END SCREEN: custom-domain =================== -->
+    <!-- ===================== SCREEN: use-email-address ===================== -->
+    <section class="screen" id="screen-use-email-address" data-screen="use-email-address">
+      <div class="ue-page">
+
+        <!-- ---------- LEFT COLUMN: reset-by-email card ---------- -->
+        <div class="ue-left">
+          <div class="ue-card">
+            <div class="ue-body">
+
+              <!-- Salesforce cloud logo (inside the card, no caption per reference) -->
+              <div class="brand ue-brand">
+                <svg class="brand-cloud" viewBox="0 0 150 106" role="img" aria-label="Salesforce">
+                  <g fill="#00A1E0">
+                    <circle cx="58" cy="35" r="30"></circle>
+                    <circle cx="99" cy="31" r="28"></circle>
+                    <circle cx="125" cy="57" r="25"></circle>
+                    <circle cx="27" cy="59" r="23"></circle>
+                    <circle cx="45" cy="83" r="21"></circle>
+                    <circle cx="75" cy="89" r="23"></circle>
+                    <circle cx="104" cy="83" r="21"></circle>
+                    <ellipse cx="76" cy="59" rx="51" ry="35"></ellipse>
+                  </g>
+                  <text x="75" y="66" text-anchor="middle" fill="#ffffff"
+                        font-family="Helvetica, Arial, sans-serif" font-size="21"
+                        font-weight="700" font-style="italic" letter-spacing="-0.9">salesforce</text>
+                </svg>
+              </div>
+
+              <h1 class="ue-title">Reset Your Password</h1>
+
+              <p class="ue-text">We'll send you an email, and then verify your identity.</p>
+              <a href="#" class="link ue-help" data-route="how-do-i-verify-identity">How do I verify my Identity?</a>
+              <p class="ue-text ue-text-help">Need help? Contact your Salesforce admin.</p>
+
+              <!-- Inline notice (Privacy message / Continue confirmation) -->
+              <div class="notice ue-notice" id="ue-notice" hidden></div>
+
+              <form id="email-form" novalidate>
+                <div class="field ue-field">
+                  <div class="input-wrap">
+                    <input type="text" id="ue-email" name="ue-email" placeholder="Enter your email address..." autocomplete="email" />
+                    <span class="input-key" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="15" height="15">
+                        <path fill="#333" d="M14 3a5 5 0 0 0-4.9 6H3v3h2v2h2v-2h2.1A5 5 0 1 0 14 3zm2.5 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="9" height="9" class="caret">
+                        <path fill="#333" d="M7 10l5 5 5-5z"/>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="ue-continue">Continue</button>
+                <button type="button" class="btn btn-outline btn-block ue-cancel" data-route="forgot-password">Cancel</button>
+              </form>
+            </div>
+
+            <!-- Card footer strip -->
+            <div class="ue-foot">
+              &copy; 2026 Salesforce, Inc. All rights reserved.
+              <a href="#" class="link" id="ue-privacy-link">Privacy</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---------- RIGHT COLUMN: marketing (replicated from login-main) ---------- -->
+        <div class="marketing-col">
+          <!-- decorative background shapes -->
+          <span class="decor decor-circle" aria-hidden="true"></span>
+          <span class="decor decor-ring" aria-hidden="true"></span>
+          <span class="decor decor-band" aria-hidden="true"></span>
+
+          <div class="marketing-inner">
+            <h2 class="marketing-title">Get Salesforce for free. No credit card required, no software to install.</h2>
+
+            <p class="marketing-sub">With your free CRM, you get:</p>
+
+            <ul class="benefits">
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>Up to 2 users with no time limits</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>Quick and easy set-up with guided onboarding</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>Sales, service, and email marketing together in one place</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>A free Slack workspace for collaborating with partners</span>
+              </li>
+            </ul>
+
+            <button type="button" class="btn btn-primary btn-getcrm" data-route="free-crm-signup">Get free CRM</button>
+
+            <!-- Dashboard preview (recreated in HTML/CSS) -->
+            <div class="dash-preview" aria-hidden="true">
+
+              <!-- Main Lightning window -->
+              <div class="dash-window">
+                <div class="dash-nav">
+                  <span class="dash-cloud"></span>
+                  <span class="dash-waffle">
+                    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  </span>
+                  <span class="dash-app">Sales</span>
+                  <span class="dash-tabs">
+                    <span>Home</span><span>Campaigns</span><span>Leads</span><span>Accounts</span><span class="active">Opportunities</span><span>Contacts</span><span>Forecasts</span><span>Files</span><span>Dashboards</span><span>Quotes</span>
+                  </span>
+                  <span class="dash-search">&#9906;</span>
+                </div>
+
+                <div class="dash-subhead">
+                  <div class="dash-subleft">
+                    <span class="dash-objicon"></span>
+                    <div>
+                      <div class="dash-objlabel">Opportunities</div>
+                      <div class="dash-listtitle">My Open Deals &#9662;</div>
+                    </div>
+                  </div>
+                  <div class="dash-actions"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+
+                <div class="dash-board">
+                  <div class="dash-stage">
+                    <div class="stage-head">Proposal (2)</div>
+                    <div class="stage-total">$3,892,499</div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                  </div>
+                  <div class="dash-stage">
+                    <div class="stage-head">Negotiation (2)</div>
+                    <div class="stage-total">$420,000</div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                  </div>
+                  <div class="dash-stage">
+                    <div class="stage-head">Closed Won (2)</div>
+                    <div class="stage-total">$355,000</div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                    <div class="deal-card"><div class="deal-name"></div><span class="ln"></span><span class="ln short"></span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Einstein Alerts overlay card -->
+              <div class="einstein-card">
+                <div class="einstein-head">
+                  <span class="einstein-title">Einstein Alerts</span>
+                </div>
+                <div class="einstein-body">
+                  <span class="einstein-crown">&#128081;</span>
+                  <p class="einstein-text">This deal is ready to close.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- =================== END SCREEN: use-email-address =================== -->
+    <!-- ===================== SCREEN: free-crm-signup ===================== -->
+    <section class="screen" id="screen-free-crm-signup" data-screen="free-crm-signup">
+      <div class="fc-page">
+
+        <!-- Header -->
+        <header class="fc-header">
+          <svg class="fc-logo" viewBox="0 0 150 106" role="img" aria-label="Salesforce">
+            <g fill="#00A1E0">
+              <circle cx="58" cy="35" r="30"></circle>
+              <circle cx="99" cy="31" r="28"></circle>
+              <circle cx="125" cy="57" r="25"></circle>
+              <circle cx="27" cy="59" r="23"></circle>
+              <circle cx="45" cy="83" r="21"></circle>
+              <circle cx="75" cy="89" r="23"></circle>
+              <circle cx="104" cy="83" r="21"></circle>
+              <ellipse cx="76" cy="59" rx="51" ry="35"></ellipse>
+            </g>
+            <text x="75" y="66" text-anchor="middle" fill="#ffffff"
+                  font-family="Helvetica, Arial, sans-serif" font-size="21"
+                  font-weight="700" font-style="italic" letter-spacing="-0.9">salesforce</text>
+          </svg>
+
+          <div class="fc-login-wrap">
+            <a href="#" class="fc-login" id="fc-login-btn">
+              <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                <path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+              </svg>
+              <span>Login</span>
+            </a>
+
+            <!-- Login dropdown (matches login-dropdown.png) -->
+            <div class="fc-dropdown" id="fc-dropdown" hidden>
+              <div class="fc-dd-title">Login</div>
+              <div class="fc-dd-label">Products</div>
+              <a href="#" class="link fc-dd-link" data-route="login-main">
+                Salesforce Login
+                <svg viewBox="0 0 150 106" width="16" height="11" aria-hidden="true">
+                  <g fill="#00A1E0">
+                    <circle cx="58" cy="35" r="30"></circle>
+                    <circle cx="99" cy="31" r="28"></circle>
+                    <circle cx="125" cy="57" r="25"></circle>
+                    <circle cx="27" cy="59" r="23"></circle>
+                    <circle cx="45" cy="83" r="21"></circle>
+                    <circle cx="75" cy="89" r="23"></circle>
+                    <circle cx="104" cy="83" r="21"></circle>
+                    <ellipse cx="76" cy="59" rx="51" ry="35"></ellipse>
+                  </g>
+                </svg>
+              </a>
+              <a href="#" class="link fc-dd-link" data-route="marketing-cloud-login">Marketing Cloud Login</a>
+              <hr class="fc-dd-sep" />
+              <div class="fc-dd-label">Experiences</div>
+              <a href="#" class="link fc-dd-link" data-route="trailblazer-login">Trailblazer Account</a>
+              <p class="fc-dd-desc">Access Trailhead, your Trailblazer profile, community, learning, original series, events, support, and more.</p>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main two-area content -->
+        <div class="fc-main">
+
+          <!-- Left hero -->
+          <div class="fc-hero">
+            <h1 class="fc-title">Growth starts with Salesforce, free.</h1>
+            <p class="fc-sub">No credit card required, no software to install.</p>
+            <p class="fc-gives">Your free AI CRM gives you:</p>
+
+            <ul class="benefits fc-benefits">
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>Up to 2 users with no time limit</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>Quick and easy set-up with guided onboarding</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>Sales, service, and email marketing</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>Built-in AI for quick insights and email drafting</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0d76d3" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                </span>
+                <span>Free Slack workspace for collaboration</span>
+              </li>
+            </ul>
+
+            <p class="fc-para">Stop waiting and start growing. Sign up now for free access. Your free Slack workspace includes a 30-day trial of Business+ features.</p>
+            <p class="fc-para">Not quite ready? Learn more about <a href="#" class="link fc-freesuite" id="fc-freesuite">Free Suite
+              <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path fill="currentColor" d="M14 3v2h3.6l-9.3 9.3 1.4 1.4L19 6.4V10h2V3zM5 5h5V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5h-2v5H5z"/></svg></a> to see how Salesforce helps you grow faster with the free, foundational AI CRM for small businesses.</p>
+          </div>
+
+          <!-- Right sign-up card -->
+          <div class="fc-card">
+            <h2 class="fc-card-title">Sign up and get Salesforce for free.</h2>
+            <p class="fc-card-sub">Answer a few questions and we&rsquo;ll get you in.</p>
+            <p class="fc-card-text">Complete the form to start using Salesforce. Our team will be in touch to help make the most of your experience.</p>
+
+            <!-- Inline notice (Ask Agentforce / Free Suite) -->
+            <div class="notice fc-notice" id="fc-notice" hidden></div>
+
+            <form id="signup-form" novalidate>
+              <div class="field">
+                <label for="fc-first">First name</label>
+                <div class="input-wrap"><input type="text" id="fc-first" name="fc-first" autocomplete="given-name" /></div>
+              </div>
+              <div class="field">
+                <label for="fc-last">Last name</label>
+                <div class="input-wrap"><input type="text" id="fc-last" name="fc-last" autocomplete="family-name" /></div>
+              </div>
+              <div class="field">
+                <label for="fc-job">Job title</label>
+                <div class="input-wrap"><input type="text" id="fc-job" name="fc-job" class="fc-jobtitle" autocomplete="organization-title" /></div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="fc-next">Next</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Floating Ask Agentforce button -->
+        <button type="button" class="fc-agentforce" id="fc-agentforce">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" fill="#ffffff" opacity="0.18"></circle>
+            <path fill="#ffffff" d="M12 6a2 2 0 0 1 2 2v1h1a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-3a3 3 0 0 1 3-3h1V8a2 2 0 0 1 2-2zm-2 7a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+          </svg>
+          <span>Ask Agentforce</span>
+        </button>
+
+      </div>
+    </section>
+    <!-- =================== END SCREEN: free-crm-signup =================== -->
+    <!-- ===================== SCREEN: home-dashboard ===================== -->
+    <section class="screen" id="screen-home-dashboard" data-screen="home-dashboard">
+      <div class="hd-app">
+
+        <!-- Promo bar -->
+        <div class="hd-promo">
+          <div class="hd-promo-msg">
+            Don't wait: <strong>Save 70%</strong> now with code <strong>STARTER70</strong> | Terms apply.
+            <button type="button" class="hd-buynow hd-notice">Buy Now</button>
+          </div>
+          <div class="hd-promo-trial">Days left in your Trial: <span class="hd-trial-num">30</span></div>
+        </div>
+
+        <!-- Top navigation bar -->
+        <header class="hd-topnav">
+          <div class="hd-topnav-left">
+            <svg class="hd-cloud" viewBox="0 0 150 106" role="img" aria-label="Salesforce">
+              <g fill="#00A1E0">
+                <circle cx="58" cy="35" r="30"></circle>
+                <circle cx="99" cy="31" r="28"></circle>
+                <circle cx="125" cy="57" r="25"></circle>
+                <circle cx="27" cy="59" r="23"></circle>
+                <circle cx="45" cy="83" r="21"></circle>
+                <circle cx="75" cy="89" r="23"></circle>
+                <circle cx="104" cy="83" r="21"></circle>
+                <ellipse cx="76" cy="59" rx="51" ry="35"></ellipse>
+              </g>
+            </svg>
+          </div>
+
+          <div class="hd-search hd-notice">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#747474" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.49 4.49 0 0 1 9.5 14z"/></svg>
+            <input type="text" class="hd-search-input" placeholder="Search..." aria-label="Search" />
+          </div>
+
+          <div class="hd-topnav-right">
+            <button type="button" class="hd-icon hd-notice" aria-label="Agentforce">
+              <svg viewBox="0 0 24 24" width="22" height="22"><rect x="4" y="6" width="16" height="13" rx="5" fill="#3b3b6b"/><circle cx="9.5" cy="12.5" r="1.6" fill="#fff"/><circle cx="14.5" cy="12.5" r="1.6" fill="#fff"/><rect x="11" y="2.5" width="2" height="3.5" rx="1" fill="#3b3b6b"/><circle cx="12" cy="2.4" r="1.3" fill="#3b3b6b"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Cloud">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#3b3b6b" d="M19 18H6a4 4 0 0 1-.6-7.95A6 6 0 0 1 17 9a4.5 4.5 0 0 1 2 9z"/><path fill="#fff" d="M12 9l3 4H9z"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Help">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="#3b3b6b" stroke-width="2" d="M9.2 9a2.8 2.8 0 1 1 4.2 2.4c-.9.6-1.4 1.1-1.4 2.1"/><circle cx="12" cy="17.5" r="1.2" fill="#3b3b6b"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Settings">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#3b3b6b" d="M19.4 13a7.5 7.5 0 0 0 0-2l2-1.6-2-3.4-2.4 1a7.3 7.3 0 0 0-1.7-1l-.4-2.5h-3.8l-.4 2.5a7.3 7.3 0 0 0-1.7 1l-2.4-1-2 3.4L4.6 11a7.5 7.5 0 0 0 0 2l-2 1.6 2 3.4 2.4-1a7.3 7.3 0 0 0 1.7 1l.4 2.5h3.8l.4-2.5a7.3 7.3 0 0 0 1.7-1l2.4 1 2-3.4zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#3b3b6b" d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22zm6-6v-5a6 6 0 0 0-4.5-5.8V4.5a1.5 1.5 0 1 0-3 0v.7A6 6 0 0 0 6 11v5l-2 2v1h16v-1z"/></svg>
+            </button>
+            <div class="hd-profile-wrap">
+              <button type="button" class="hd-avatar" id="hd-profile-btn" aria-label="Profile">
+                <svg viewBox="0 0 24 24" width="34" height="34"><circle cx="12" cy="12" r="12" fill="#0b5cab"/><ellipse cx="12" cy="11" rx="6.5" ry="6" fill="#fff"/><circle cx="9.6" cy="11" r="1.5" fill="#0b5cab"/><circle cx="14.4" cy="11" r="1.5" fill="#0b5cab"/><ellipse cx="12" cy="14.2" rx="1.6" ry="1.1" fill="#0b5cab"/></svg>
+              </button>
+              <div class="hd-profile-menu" id="hd-profile-menu" hidden>
+                <button type="button" class="hd-profile-logout" id="hd-logout">Logout</button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Tab row -->
+        <div class="hd-tabrow">
+          <span class="hd-appname">Home</span>
+          <a href="#" class="hd-tab hd-tab-active" data-route="home-dashboard">Home</a>
+          <button type="button" class="hd-edit hd-notice" aria-label="Edit page">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#0b76d4" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z"/></svg>
+          </button>
+        </div>
+
+        <!-- Body: sidebar + main -->
+        <div class="hd-body">
+
+          <!-- Left sidebar -->
+          <nav class="hd-sidebar">
+            <a href="#" class="hd-nav hd-nav-active" data-route="home-dashboard">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 3 3 10.2V21h6v-6h6v6h6V10.2z"/></svg></span>
+              <span class="hd-nav-tx">Home</span>
+            </a>
+            <a href="#" class="hd-nav" data-route="contacts">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm8 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm-8 2c-2.7 0-6 1.3-6 4v2h8v-2c0-1 .4-1.9 1.1-2.6A9 9 0 0 0 8 13zm8 0a8 8 0 0 0-1.6.2A4.7 4.7 0 0 1 16 17v2h6v-2c0-2.7-3.3-4-6-4z"/></svg></span>
+              <span class="hd-nav-tx">Contacts</span>
+            </a>
+            <a href="#" class="hd-nav" data-route="accounts">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3h2a2 2 0 0 1 2 2v11zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm7-2h2v2h-2zm0 4h2v2h-2z"/></svg></span>
+              <span class="hd-nav-tx">Accounts</span>
+            </a>
+            <a href="#" class="hd-nav" data-route="leads">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 18h3v-6H4zm6.5 0h3V6h-3zM17 18h3v-9h-3z"/></svg></span>
+              <span class="hd-nav-tx">Sales</span>
+            </a>
+            <a href="#" class="hd-nav" data-route="cases">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 21s-7-4.4-7-9.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7 4.5C19 16.6 12 21 12 21z"/></svg></span>
+              <span class="hd-nav-tx">Service</span>
+            </a>
+            <a href="#" class="hd-nav hd-notice">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 10v4h3l5 4V6L7 10zm12.5 2a3.5 3.5 0 0 0-2-3.2v6.4a3.5 3.5 0 0 0 2-3.2z"/></svg></span>
+              <span class="hd-nav-tx">Marketing</span>
+            </a>
+            <a href="#" class="hd-nav hd-notice">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7 18a2 2 0 1 0 2 2 2 2 0 0 0-2-2zm10 0a2 2 0 1 0 2 2 2 2 0 0 0-2-2zM5.2 4 4.7 6H20l-2.5 8H8L5.4 4H2v2h1.8z"/></svg></span>
+              <span class="hd-nav-tx">Commerce</span>
+            </a>
+            <a href="#" class="hd-nav hd-notice">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M3 5h8v6H3zm10 0h8v3h-8zm0 5h8v9h-8zM3 13h8v6H3z"/></svg></span>
+              <span class="hd-nav-tx">Your Account</span>
+            </a>
+          </nav>
+
+          <!-- Main content -->
+          <main class="hd-main">
+
+            <!-- Welcome banner -->
+            <section class="hd-welcome" id="hd-welcome">
+              <button type="button" class="hd-banner-toggle" id="hd-banner-toggle" aria-label="Collapse">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#032d60" d="M7 10l5 5 5-5z"/></svg>
+              </button>
+              <div class="hd-welcome-inner">
+                <div class="hd-welcome-text">
+                  <h1 class="hd-welcome-title">Welcome, Albert</h1>
+                  <p class="hd-welcome-sub">Check out these suggestions to kick off your day.</p>
+                  <a href="#" class="hd-link hd-notice">View All Cards</a>
+                </div>
+
+                <div class="hd-suggestions">
+                  <div class="hd-sug">
+                    <div class="hd-sug-top">
+                      <span class="hd-sug-ic hd-sug-ic-bot"><svg viewBox="0 0 24 24" width="18" height="18"><rect x="4" y="7" width="16" height="12" rx="5" fill="#5867e8"/><circle cx="9.5" cy="13" r="1.5" fill="#fff"/><circle cx="14.5" cy="13" r="1.5" fill="#fff"/><circle cx="12" cy="4" r="1.6" fill="#5867e8"/><rect x="11.2" y="4.5" width="1.6" height="3" fill="#5867e8"/></svg></span>
+                      <button type="button" class="hd-sug-x" aria-label="Dismiss"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#0b76d4" d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7l1.4-1.4 6.3 6.3 6.3-6.3z"/></svg></button>
+                    </div>
+                    <a href="#" class="hd-sug-title hd-notice">Chat with Trusted AI</a>
+                    <p class="hd-sug-body">Start a conversation with Agentforce to help you with your tasks, summarize data, and more!</p>
+                  </div>
+
+                  <div class="hd-sug">
+                    <div class="hd-sug-top">
+                      <span class="hd-sug-ic hd-sug-ic-cap"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="#fff" d="M12 5 2 9l10 4 8-3.2V15h2V9z"/><path fill="#fff" d="M6 13v3c0 1.7 2.7 3 6 3s6-1.3 6-3v-3l-6 2.4z"/></svg></span>
+                      <button type="button" class="hd-sug-x" aria-label="Dismiss"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#0b76d4" d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7l1.4-1.4 6.3 6.3 6.3-6.3z"/></svg></button>
+                    </div>
+                    <a href="#" class="hd-sug-title hd-notice">Create your first contact</a>
+                    <p class="hd-sug-body">Growing your sales starts with contacts. Let&rsquo;s walk through it.</p>
+                  </div>
+
+                  <div class="hd-sug">
+                    <div class="hd-sug-top">
+                      <span class="hd-sug-ic hd-sug-ic-cap"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="#fff" d="M12 5 2 9l10 4 8-3.2V15h2V9z"/><path fill="#fff" d="M6 13v3c0 1.7 2.7 3 6 3s6-1.3 6-3v-3l-6 2.4z"/></svg></span>
+                      <button type="button" class="hd-sug-x" aria-label="Dismiss"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#0b76d4" d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7l1.4-1.4 6.3 6.3 6.3-6.3z"/></svg></button>
+                    </div>
+                    <a href="#" class="hd-sug-title hd-notice">Create your first lead</a>
+                    <p class="hd-sug-body">Let us show you how easy it is to convert your leads into contacts, accounts, and opportunities.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Card grid -->
+            <div class="hd-grid">
+
+              <!-- My Leads -->
+              <div class="hd-card">
+                <div class="hd-card-head">
+                  <span class="hd-card-ic hd-ic-leads"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="#fff" d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.1l1-5.8-4.3-4.1 5.9-.9z"/></svg></span>
+                  <div class="hd-card-search hd-notice"><input type="text" value="My Leads" readonly aria-label="My Leads" /><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#747474" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.49 4.49 0 0 1 9.5 14z"/></svg></div>
+                  <button type="button" class="hd-new hd-notice">New</button>
+                  <button type="button" class="hd-caret hd-notice" aria-label="More"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#0b76d4" d="M7 10l5 5 5-5z"/></svg></button>
+                </div>
+                <div class="hd-card-body">
+                  <div class="hd-illus hd-illus-leads">
+                    <span class="hd-illus-circle"></span>
+                    <span class="hd-illus-bars"><i></i><i></i><i></i><i class="on"></i><i></i></span>
+                    <svg class="hd-illus-bird" viewBox="0 0 40 30" width="38" height="28"><path fill="#b5651d" d="M4 18c6-2 12-3 18-10 1 4-1 8-5 11 3 0 6-1 9-3-2 4-6 7-12 7-5 0-9-2-10-5z"/><path fill="#e23b2e" d="M22 6c2-2 5-3 8-2-2 1-3 3-3 5-2-1-4-2-5-3z"/></svg>
+                  </div>
+                  <p class="hd-card-cap">Track progress as you qualify leads.</p>
+                </div>
+                <div class="hd-card-foot">
+                  <a href="#" class="hd-link hd-notice">View Report</a>
+                  <span class="hd-asof">As of Today at 5:05 PM</span>
+                  <button type="button" class="hd-refresh hd-notice" aria-label="Refresh"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M17.65 6.35A8 8 0 1 0 19.73 14h-2.08A6 6 0 1 1 12 6a5.9 5.9 0 0 1 4.2 1.8L13 11h7V4z"/></svg></button>
+                </div>
+              </div>
+
+              <!-- My Opportunities -->
+              <div class="hd-card">
+                <div class="hd-card-head">
+                  <span class="hd-card-ic hd-ic-opps"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="#fff" d="M5 8 3 6v9h18V6l-2 2-3-3-2 3-1-4-1 4-2-3z"/></svg></span>
+                  <div class="hd-card-search hd-notice"><input type="text" value="My Opportunities" readonly aria-label="My Opportunities" /><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#747474" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.49 4.49 0 0 1 9.5 14z"/></svg></div>
+                  <button type="button" class="hd-new hd-notice">New</button>
+                  <button type="button" class="hd-caret hd-notice" aria-label="More"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#0b76d4" d="M7 10l5 5 5-5z"/></svg></button>
+                </div>
+                <div class="hd-card-body">
+                  <div class="hd-illus hd-illus-opps">
+                    <span class="hd-illus-circle"></span>
+                    <span class="hd-illus-bars"><i></i><i></i><i></i><i></i><i></i></span>
+                    <svg class="hd-illus-fly" viewBox="0 0 30 24" width="26" height="20"><path fill="#e2873b" d="M15 12c-3-6-9-7-12-4 2 1 4 4 5 8-4-1-7 0-8 3 4 1 8-1 11-4 1 4 3 7 6 8-1-4-1-8-2-11z"/></svg>
+                  </div>
+                  <p class="hd-card-cap">View your deals to keep them moving.</p>
+                </div>
+                <div class="hd-card-foot">
+                  <a href="#" class="hd-link hd-notice">View Report</a>
+                  <span class="hd-asof">As of Today at 5:05 PM</span>
+                  <button type="button" class="hd-refresh hd-notice" aria-label="Refresh"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M17.65 6.35A8 8 0 1 0 19.73 14h-2.08A6 6 0 1 1 12 6a5.9 5.9 0 0 1 4.2 1.8L13 11h7V4z"/></svg></button>
+                </div>
+              </div>
+
+              <!-- My Contacts -->
+              <div class="hd-card">
+                <div class="hd-card-head">
+                  <span class="hd-card-ic hd-ic-contacts"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="9" r="3.4" fill="#fff"/><path fill="#fff" d="M6 19c0-3 3-5 6-5s6 2 6 5z"/></svg></span>
+                  <div class="hd-card-search hd-notice"><input type="text" value="My Contacts" readonly aria-label="My Contacts" /><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#747474" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.49 4.49 0 0 1 9.5 14z"/></svg></div>
+                  <button type="button" class="hd-new hd-notice">New</button>
+                  <button type="button" class="hd-caret hd-notice" aria-label="More"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#0b76d4" d="M7 10l5 5 5-5z"/></svg></button>
+                </div>
+                <div class="hd-card-body">
+                  <div class="hd-illus hd-illus-contacts">
+                    <span class="hd-illus-circle"></span>
+                    <span class="hd-illus-cardmock"><b></b><u></u><u class="s"></u></span>
+                  </div>
+                  <p class="hd-card-cap">Add contacts and see who is new.</p>
+                </div>
+                <div class="hd-card-foot">
+                  <a href="#" class="hd-link hd-notice">View Report</a>
+                  <span class="hd-asof">As of today at 5:05 PM</span>
+                  <button type="button" class="hd-refresh hd-notice" aria-label="Refresh"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M17.65 6.35A8 8 0 1 0 19.73 14h-2.08A6 6 0 1 1 12 6a5.9 5.9 0 0 1 4.2 1.8L13 11h7V4z"/></svg></button>
+                </div>
+              </div>
+
+              <!-- Recent Records -->
+              <div class="hd-card hd-card-records">
+                <div class="hd-records-head">
+                  <h2 class="hd-records-title">Recent Records</h2>
+                  <button type="button" class="hd-caret hd-notice" aria-label="More"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#0b76d4" d="M7 10l5 5 5-5z"/></svg></button>
+                </div>
+                <ul class="hd-records-list">
+                  <li><span class="hd-rec-ic"><svg viewBox="0 0 24 24" width="14" height="14"><rect x="6" y="4" width="12" height="16" rx="2" fill="#fff"/><rect x="9" y="2.5" width="6" height="3" rx="1" fill="#fff"/><rect x="8.5" y="13" width="2" height="4" fill="#2e9e8f"/><rect x="11.5" y="10" width="2" height="7" fill="#2e9e8f"/><rect x="14.5" y="12" width="2" height="5" fill="#2e9e8f"/></svg></span><a href="#" class="hd-rec-link hd-notice">Open Cases for Accounts I Own</a></li>
+                  <li><span class="hd-rec-ic"><svg viewBox="0 0 24 24" width="14" height="14"><rect x="6" y="4" width="12" height="16" rx="2" fill="#fff"/><rect x="9" y="2.5" width="6" height="3" rx="1" fill="#fff"/><rect x="8.5" y="13" width="2" height="4" fill="#2e9e8f"/><rect x="11.5" y="10" width="2" height="7" fill="#2e9e8f"/><rect x="14.5" y="12" width="2" height="5" fill="#2e9e8f"/></svg></span><a href="#" class="hd-rec-link hd-notice">Closed Cases</a></li>
+                  <li><span class="hd-rec-ic"><svg viewBox="0 0 24 24" width="14" height="14"><rect x="6" y="4" width="12" height="16" rx="2" fill="#fff"/><rect x="9" y="2.5" width="6" height="3" rx="1" fill="#fff"/><rect x="8.5" y="13" width="2" height="4" fill="#2e9e8f"/><rect x="11.5" y="10" width="2" height="7" fill="#2e9e8f"/><rect x="14.5" y="12" width="2" height="5" fill="#2e9e8f"/></svg></span><a href="#" class="hd-rec-link hd-notice">Cases with Articles</a></li>
+                  <li><span class="hd-rec-ic"><svg viewBox="0 0 24 24" width="14" height="14"><rect x="6" y="4" width="12" height="16" rx="2" fill="#fff"/><rect x="9" y="2.5" width="6" height="3" rx="1" fill="#fff"/><rect x="8.5" y="13" width="2" height="4" fill="#2e9e8f"/><rect x="11.5" y="10" width="2" height="7" fill="#2e9e8f"/><rect x="14.5" y="12" width="2" height="5" fill="#2e9e8f"/></svg></span><a href="#" class="hd-rec-link hd-notice">Cases Closed MTD</a></li>
+                  <li><span class="hd-rec-ic"><svg viewBox="0 0 24 24" width="14" height="14"><rect x="6" y="4" width="12" height="16" rx="2" fill="#fff"/><rect x="9" y="2.5" width="6" height="3" rx="1" fill="#fff"/><rect x="8.5" y="13" width="2" height="4" fill="#2e9e8f"/><rect x="11.5" y="10" width="2" height="7" fill="#2e9e8f"/><rect x="14.5" y="12" width="2" height="5" fill="#2e9e8f"/></svg></span><a href="#" class="hd-rec-link hd-notice">Article Votes</a></li>
+                </ul>
+                <div class="hd-records-foot">
+                  <button type="button" class="hd-viewall hd-notice">View All</button>
+                </div>
+              </div>
+
+              <!-- All New Cases By Priority -->
+              <div class="hd-card">
+                <div class="hd-card-head">
+                  <span class="hd-card-ic hd-ic-cases"><svg viewBox="0 0 24 24" width="16" height="16"><rect x="5" y="7" width="14" height="11" rx="2" fill="#fff"/><path fill="#fff" d="M9 7V6a3 3 0 0 1 6 0v1h-2V6a1 1 0 0 0-2 0v1z"/></svg></span>
+                  <div class="hd-card-search hd-notice"><input type="text" value="All New Cases By Priority" readonly aria-label="All New Cases By Priority" /><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#747474" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.49 4.49 0 0 1 9.5 14z"/></svg></div>
+                  <button type="button" class="hd-new hd-notice">New</button>
+                  <button type="button" class="hd-caret hd-notice" aria-label="More"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#0b76d4" d="M7 10l5 5 5-5z"/></svg></button>
+                </div>
+                <div class="hd-card-body">
+                  <div class="hd-illus hd-illus-cases">
+                    <span class="hd-illus-circle"></span>
+                    <span class="hd-illus-listmock"><u></u><u></u><u class="s"></u></span>
+                    <svg class="hd-illus-heart" viewBox="0 0 24 24" width="16" height="16"><path fill="#e0457b" d="M12 21s-7-4.4-7-9.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7 4.5C19 16.6 12 21 12 21z"/></svg>
+                  </div>
+                  <p class="hd-card-cap">Tackle service issues when cases come in.</p>
+                </div>
+                <div class="hd-card-foot">
+                  <a href="#" class="hd-link hd-notice">View Report</a>
+                  <span class="hd-asof">As of Today at 5:05 PM</span>
+                  <button type="button" class="hd-refresh hd-notice" aria-label="Refresh"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M17.65 6.35A8 8 0 1 0 19.73 14h-2.08A6 6 0 1 1 12 6a5.9 5.9 0 0 1 4.2 1.8L13 11h7V4z"/></svg></button>
+                </div>
+              </div>
+
+              <!-- Make It Your Home -->
+              <div class="hd-card hd-card-makehome">
+                <div class="hd-records-head">
+                  <h2 class="hd-records-title">Make It Your Home</h2>
+                  <button type="button" class="hd-caret hd-notice" aria-label="More"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#0b76d4" d="M7 10l5 5 5-5z"/></svg></button>
+                </div>
+                <p class="hd-makehome-text">To replace a card, click its action menu and select <strong>Change Home Card.</strong> Use the filters on cards to personalize your view even more.</p>
+                <div class="hd-makehome-mock">
+                  <span class="hd-mm-dot"></span>
+                  <span class="hd-mm-search"></span>
+                  <span class="hd-mm-pill"></span>
+                  <span class="hd-mm-caret"><svg viewBox="0 0 24 24" width="12" height="12"><path fill="#0b76d4" d="M7 10l5 5 5-5z"/></svg></span>
+                  <span class="hd-mm-menu"><u></u><u class="s"></u></span>
+                  <svg class="hd-mm-arrow" viewBox="0 0 40 40" width="34" height="34"><path fill="none" stroke="#e2873b" stroke-width="2" d="M30 10C24 16 20 22 16 30"/><path fill="#e2873b" d="M30 9l-1 6-4-3z"/></svg>
+                </div>
+              </div>
+
+            </div>
+          </main>
+        </div>
+
+        <!-- Bottom utility bar -->
+        <footer class="hd-bottom">
+          <button type="button" class="hd-todo hd-notice">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#54698d" d="M3 5h2v2H3zm4 0h14v2H7zM3 11h2v2H3zm4 0h14v2H7zM3 17h2v2H3zm4 0h14v2H7z"/></svg>
+            <span>To Do List</span>
+          </button>
+        </footer>
+
+        <!-- Inline notice toast (approved "Not part of this prototype.") -->
+        <div class="hd-toast" id="hd-toast" hidden></div>
+
+      </div>
+    </section>
+    <!-- =================== END SCREEN: home-dashboard =================== -->
+
+    <!-- ===================== SCREEN: accounts ===================== -->
+    <section class="screen" id="screen-accounts" data-screen="accounts">
+      <div class="hd-app">
+
+        <!-- Promo bar (reused hd shell) -->
+        <div class="hd-promo">
+          <div class="hd-promo-msg">
+            Don't wait: <strong>Save 70%</strong> now with code <strong>STARTER70</strong> | Terms apply.
+            <button type="button" class="hd-buynow hd-notice">Buy Now</button>
+          </div>
+          <div class="hd-promo-trial">Days left in your Trial: <span class="hd-trial-num">30</span></div>
+        </div>
+
+        <!-- Top navigation bar (reused hd shell) -->
+        <header class="hd-topnav">
+          <div class="hd-topnav-left">
+            <svg class="hd-cloud" viewBox="0 0 150 106" role="img" aria-label="Salesforce">
+              <g fill="#00A1E0">
+                <circle cx="58" cy="35" r="30"></circle>
+                <circle cx="99" cy="31" r="28"></circle>
+                <circle cx="125" cy="57" r="25"></circle>
+                <circle cx="27" cy="59" r="23"></circle>
+                <circle cx="45" cy="83" r="21"></circle>
+                <circle cx="75" cy="89" r="23"></circle>
+                <circle cx="104" cy="83" r="21"></circle>
+                <ellipse cx="76" cy="59" rx="51" ry="35"></ellipse>
+              </g>
+            </svg>
+          </div>
+
+          <div class="hd-search hd-notice">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#747474" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.49 4.49 0 0 1 9.5 14z"/></svg>
+            <input type="text" class="hd-search-input" placeholder="Search..." aria-label="Search" />
+          </div>
+
+          <div class="hd-topnav-right">
+            <button type="button" class="hd-icon hd-notice" aria-label="Agentforce">
+              <svg viewBox="0 0 24 24" width="22" height="22"><rect x="4" y="6" width="16" height="13" rx="5" fill="#3b3b6b"/><circle cx="9.5" cy="12.5" r="1.6" fill="#fff"/><circle cx="14.5" cy="12.5" r="1.6" fill="#fff"/><rect x="11" y="2.5" width="2" height="3.5" rx="1" fill="#3b3b6b"/><circle cx="12" cy="2.4" r="1.3" fill="#3b3b6b"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Cloud">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#3b3b6b" d="M19 18H6a4 4 0 0 1-.6-7.95A6 6 0 0 1 17 9a4.5 4.5 0 0 1 2 9z"/><path fill="#fff" d="M12 9l3 4H9z"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Help">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="#3b3b6b" stroke-width="2" d="M9.2 9a2.8 2.8 0 1 1 4.2 2.4c-.9.6-1.4 1.1-1.4 2.1"/><circle cx="12" cy="17.5" r="1.2" fill="#3b3b6b"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Settings">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#3b3b6b" d="M19.4 13a7.5 7.5 0 0 0 0-2l2-1.6-2-3.4-2.4 1a7.3 7.3 0 0 0-1.7-1l-.4-2.5h-3.8l-.4 2.5a7.3 7.3 0 0 0-1.7 1l-2.4-1-2 3.4L4.6 11a7.5 7.5 0 0 0 0 2l-2 1.6 2 3.4 2.4-1a7.3 7.3 0 0 0 1.7 1l.4 2.5h3.8l.4-2.5a7.3 7.3 0 0 0 1.7-1l2.4 1 2-3.4zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#3b3b6b" d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22zm6-6v-5a6 6 0 0 0-4.5-5.8V4.5a1.5 1.5 0 1 0-3 0v.7A6 6 0 0 0 6 11v5l-2 2v1h16v-1z"/></svg>
+            </button>
+            <div class="hd-profile-wrap">
+              <button type="button" class="hd-avatar" id="ac-profile-btn" aria-label="Profile">
+                <svg viewBox="0 0 24 24" width="34" height="34"><circle cx="12" cy="12" r="12" fill="#0b5cab"/><ellipse cx="12" cy="11" rx="6.5" ry="6" fill="#fff"/><circle cx="9.6" cy="11" r="1.5" fill="#0b5cab"/><circle cx="14.4" cy="11" r="1.5" fill="#0b5cab"/><ellipse cx="12" cy="14.2" rx="1.6" ry="1.1" fill="#0b5cab"/></svg>
+              </button>
+              <div class="hd-profile-menu" id="ac-profile-menu" hidden>
+                <button type="button" class="hd-profile-logout" id="ac-logout">Logout</button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Tab row -->
+        <div class="hd-tabrow">
+          <span class="hd-appname">Accounts</span>
+          <a href="#" class="hd-tab hd-tab-active" data-route="accounts">Accounts</a>
+          <button type="button" class="ac-tab-caret hd-notice" aria-label="Tab menu">
+            <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#0b76d4" d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <button type="button" class="hd-edit hd-notice" aria-label="Edit page">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#0b76d4" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z"/></svg>
+          </button>
+        </div>
+
+        <!-- Body: sidebar + main -->
+        <div class="hd-body">
+
+          <!-- Left sidebar (Accounts active) -->
+          <nav class="hd-sidebar">
+            <a href="#" class="hd-nav" data-route="home-dashboard">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 3 3 10.2V21h6v-6h6v6h6V10.2z"/></svg></span>
+              <span class="hd-nav-tx">Home</span>
+            </a>
+            <a href="#" class="hd-nav" data-route="contacts">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm8 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm-8 2c-2.7 0-6 1.3-6 4v2h8v-2c0-1 .4-1.9 1.1-2.6A9 9 0 0 0 8 13zm8 0a8 8 0 0 0-1.6.2A4.7 4.7 0 0 1 16 17v2h6v-2c0-2.7-3.3-4-6-4z"/></svg></span>
+              <span class="hd-nav-tx">Contacts</span>
+            </a>
+            <a href="#" class="hd-nav hd-nav-active" data-route="accounts">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3h2a2 2 0 0 1 2 2v11zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm7-2h2v2h-2zm0 4h2v2h-2z"/></svg></span>
+              <span class="hd-nav-tx">Accounts</span>
+            </a>
+            <a href="#" class="hd-nav" data-route="leads">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 18h3v-6H4zm6.5 0h3V6h-3zM17 18h3v-9h-3z"/></svg></span>
+              <span class="hd-nav-tx">Sales</span>
+            </a>
+            <a href="#" class="hd-nav" data-route="cases">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 21s-7-4.4-7-9.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7 4.5C19 16.6 12 21 12 21z"/></svg></span>
+              <span class="hd-nav-tx">Service</span>
+            </a>
+            <a href="#" class="hd-nav hd-notice">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 10v4h3l5 4V6L7 10zm12.5 2a3.5 3.5 0 0 0-2-3.2v6.4a3.5 3.5 0 0 0 2-3.2z"/></svg></span>
+              <span class="hd-nav-tx">Marketing</span>
+            </a>
+            <a href="#" class="hd-nav hd-notice">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7 18a2 2 0 1 0 2 2 2 2 0 0 0-2-2zm10 0a2 2 0 1 0 2 2 2 2 0 0 0-2-2zM5.2 4 4.7 6H20l-2.5 8H8L5.4 4H2v2h1.8z"/></svg></span>
+              <span class="hd-nav-tx">Commerce</span>
+            </a>
+            <a href="#" class="hd-nav hd-notice">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M3 5h8v6H3zm10 0h8v3h-8zm0 5h8v9h-8zM3 13h8v6H3z"/></svg></span>
+              <span class="hd-nav-tx">Your Account</span>
+            </a>
+          </nav>
+
+          <!-- Accounts list view -->
+          <main class="ac-main">
+            <div class="ac-list">
+
+              <!-- List header -->
+              <div class="ac-listhead">
+                <div class="ac-lh-left">
+                  <span class="ac-lh-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="#fff" d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3h2a2 2 0 0 1 2 2v11zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm7-2h2v2h-2zm0 4h2v2h-2z"/></svg></span>
+                  <div class="ac-lh-titles">
+                    <span class="ac-overline">Accounts</span>
+                    <span class="ac-lh-row">
+                      <button type="button" class="ac-listview hd-notice">All Accounts
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#080707" d="M7 10l5 5 5-5z"/></svg>
+                      </button>
+                      <button type="button" class="ac-pin hd-notice" aria-label="Pin list view">
+                        <svg viewBox="0 0 24 24" width="14" height="14"><path fill="#0b76d4" d="M14 4V2H6v2h2v6l-2 2v2h5v6l1 1 1-1v-6h5v-2l-2-2V4z"/></svg>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+                <div class="ac-lh-actions">
+                  <button type="button" class="ac-act-btn hd-notice">New</button>
+                  <button type="button" class="ac-act-btn hd-notice">Import</button>
+                  <button type="button" class="ac-act-btn hd-notice">Assign Label</button>
+                </div>
+              </div>
+
+              <!-- Sub toolbar -->
+              <div class="ac-subbar">
+                <span class="ac-status">0 items &bull; Sorted by Account Name &bull; Filtered by All accounts &bull; Updated a few seconds ago</span>
+                <div class="ac-tools">
+                  <div class="ac-search hd-notice">
+                    <svg viewBox="0 0 24 24" width="15" height="15"><path fill="#747474" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.49 4.49 0 0 1 9.5 14z"/></svg>
+                    <input type="text" placeholder="Search this list..." aria-label="Search this list" />
+                  </div>
+                  <button type="button" class="ac-tool hd-notice" aria-label="List view controls"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M19.4 13a7.5 7.5 0 0 0 0-2l2-1.6-2-3.4-2.4 1a7.3 7.3 0 0 0-1.7-1l-.4-2.5h-3.8l-.4 2.5a7.3 7.3 0 0 0-1.7 1l-2.4-1-2 3.4L4.6 11a7.5 7.5 0 0 0 0 2l-2 1.6 2 3.4 2.4-1a7.3 7.3 0 0 0 1.7 1l.4 2.5h3.8l.4-2.5a7.3 7.3 0 0 0 1.7-1l2.4 1 2-3.4zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg><svg class="ac-tool-mini" viewBox="0 0 24 24" width="11" height="11"><path fill="#0b76d4" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Display as table"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M3 5h18v4H3zm0 6h18v3H3zm0 5h18v3H3z"/></svg><svg class="ac-tool-mini" viewBox="0 0 24 24" width="11" height="11"><path fill="#0b76d4" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Refresh"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M17.65 6.35A8 8 0 1 0 19.73 14h-2.08A6 6 0 1 1 12 6a5.9 5.9 0 0 1 4.2 1.8L13 11h7V4z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Sort"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M8 4 4 9h3v7h2V9h3zm8 16 4-5h-3V8h-2v7h-3z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Edit"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Charts"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M11 3v18a9 9 0 0 1 0-18zm2 0a9 9 0 0 1 8 8h-8z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Filters"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M3 5h18l-7 8v6l-4-2v-4z"/></svg></button>
+                </div>
+              </div>
+
+              <!-- Table -->
+              <div class="ac-table">
+                <div class="ac-thead">
+                  <span class="ac-th ac-th-check"><input type="checkbox" class="hd-notice" aria-label="Select all" /></span>
+                  <button type="button" class="ac-th hd-notice">Account Name <span class="ac-sort">&uarr;</span></button>
+                  <button type="button" class="ac-th hd-notice">Phone <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-th hd-notice">Website <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-th hd-notice">Billing City <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-th hd-notice">Billing State/Province (t&hellip; <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-th hd-notice">Account Owner Alias <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                </div>
+
+                <div class="ac-empty">
+                  <div class="ac-empty-illus">
+                    <span class="ac-illus-circle"></span>
+                    <span class="ac-illus-gauge">
+                      <svg viewBox="0 0 60 40" width="60" height="40"><path fill="none" stroke="#c4c4c4" stroke-width="6" stroke-linecap="round" d="M8 34a22 22 0 0 1 44 0"/><path fill="#7a8bd6" d="M30 32l-12-7 1-2 12 6z"/><circle cx="30" cy="32" r="3" fill="#7a8bd6"/></svg>
+                    </span>
+                    <span class="ac-illus-chip"></span>
+                    <svg class="ac-illus-pencil" viewBox="0 0 24 24" width="22" height="22"><path fill="#e2873b" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z"/></svg>
+                  </div>
+                  <h2 class="ac-empty-title">Accounts show where your contacts work</h2>
+                  <p class="ac-empty-sub">Improve your reporting and deal tracking with accounts.</p>
+                  <button type="button" class="ac-addbtn hd-notice">Add an Account</button>
+                </div>
+              </div>
+
+            </div>
+          </main>
+        </div>
+
+        <!-- Bottom utility bar (reused hd shell) -->
+        <footer class="hd-bottom">
+          <button type="button" class="hd-todo hd-notice">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#54698d" d="M3 5h2v2H3zm4 0h14v2H7zM3 11h2v2H3zm4 0h14v2H7zM3 17h2v2H3zm4 0h14v2H7z"/></svg>
+            <span>To Do List</span>
+          </button>
+        </footer>
+
+        <!-- Inline notice toast (approved "Not part of this prototype.") -->
+        <div class="hd-toast" id="ac-toast" hidden></div>
+
+      </div>
+    </section>
+    <!-- =================== END SCREEN: accounts =================== -->
+
+    <!-- ===================== SCREEN: leads ===================== -->
+    <section class="screen" id="screen-leads" data-screen="leads">
+      <div class="hd-app">
+
+        <!-- Promo bar (reused hd shell) -->
+        <div class="hd-promo">
+          <div class="hd-promo-msg">
+            Don't wait: <strong>Save 70%</strong> now with code <strong>STARTER70</strong> | Terms apply.
+            <button type="button" class="hd-buynow hd-notice">Buy Now</button>
+          </div>
+          <div class="hd-promo-trial">Days left in your Trial: <span class="hd-trial-num">30</span></div>
+        </div>
+
+        <!-- Top navigation bar (reused hd shell) -->
+        <header class="hd-topnav">
+          <div class="hd-topnav-left">
+            <svg class="hd-cloud" viewBox="0 0 150 106" role="img" aria-label="Salesforce">
+              <g fill="#00A1E0">
+                <circle cx="58" cy="35" r="30"></circle>
+                <circle cx="99" cy="31" r="28"></circle>
+                <circle cx="125" cy="57" r="25"></circle>
+                <circle cx="27" cy="59" r="23"></circle>
+                <circle cx="45" cy="83" r="21"></circle>
+                <circle cx="75" cy="89" r="23"></circle>
+                <circle cx="104" cy="83" r="21"></circle>
+                <ellipse cx="76" cy="59" rx="51" ry="35"></ellipse>
+              </g>
+            </svg>
+          </div>
+
+          <div class="hd-search hd-notice">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#747474" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.49 4.49 0 0 1 9.5 14z"/></svg>
+            <input type="text" class="hd-search-input" placeholder="Search..." aria-label="Search" />
+          </div>
+
+          <div class="hd-topnav-right">
+            <button type="button" class="hd-icon hd-notice" aria-label="Agentforce">
+              <svg viewBox="0 0 24 24" width="22" height="22"><rect x="4" y="6" width="16" height="13" rx="5" fill="#3b3b6b"/><circle cx="9.5" cy="12.5" r="1.6" fill="#fff"/><circle cx="14.5" cy="12.5" r="1.6" fill="#fff"/><rect x="11" y="2.5" width="2" height="3.5" rx="1" fill="#3b3b6b"/><circle cx="12" cy="2.4" r="1.3" fill="#3b3b6b"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Cloud">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#3b3b6b" d="M19 18H6a4 4 0 0 1-.6-7.95A6 6 0 0 1 17 9a4.5 4.5 0 0 1 2 9z"/><path fill="#fff" d="M12 9l3 4H9z"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Help">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="#3b3b6b" stroke-width="2" d="M9.2 9a2.8 2.8 0 1 1 4.2 2.4c-.9.6-1.4 1.1-1.4 2.1"/><circle cx="12" cy="17.5" r="1.2" fill="#3b3b6b"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Settings">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#3b3b6b" d="M19.4 13a7.5 7.5 0 0 0 0-2l2-1.6-2-3.4-2.4 1a7.3 7.3 0 0 0-1.7-1l-.4-2.5h-3.8l-.4 2.5a7.3 7.3 0 0 0-1.7 1l-2.4-1-2 3.4L4.6 11a7.5 7.5 0 0 0 0 2l-2 1.6 2 3.4 2.4-1a7.3 7.3 0 0 0 1.7 1l.4 2.5h3.8l.4-2.5a7.3 7.3 0 0 0 1.7-1l2.4 1 2-3.4zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#3b3b6b" d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22zm6-6v-5a6 6 0 0 0-4.5-5.8V4.5a1.5 1.5 0 1 0-3 0v.7A6 6 0 0 0 6 11v5l-2 2v1h16v-1z"/></svg>
+            </button>
+            <div class="hd-profile-wrap">
+              <button type="button" class="hd-avatar" id="ld-profile-btn" aria-label="Profile">
+                <svg viewBox="0 0 24 24" width="34" height="34"><circle cx="12" cy="12" r="12" fill="#0b5cab"/><ellipse cx="12" cy="11" rx="6.5" ry="6" fill="#fff"/><circle cx="9.6" cy="11" r="1.5" fill="#0b5cab"/><circle cx="14.4" cy="11" r="1.5" fill="#0b5cab"/><ellipse cx="12" cy="14.2" rx="1.6" ry="1.1" fill="#0b5cab"/></svg>
+              </button>
+              <div class="hd-profile-menu" id="ld-profile-menu" hidden>
+                <button type="button" class="hd-profile-logout" id="ld-logout">Logout</button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Sales app tab row -->
+        <div class="hd-tabrow ld-tabrow">
+          <span class="hd-appname">Sales</span>
+          <a href="#" class="hd-tab hd-tab-active ld-tab" data-route="leads">Leads</a>
+          <a href="#" class="hd-tab ld-tab" data-route="contacts">Contacts</a>
+          <a href="#" class="hd-tab ld-tab" data-route="accounts">Accounts</a>
+          <a href="#" class="hd-tab ld-tab hd-notice">Opportunities</a>
+          <a href="#" class="hd-tab ld-tab hd-notice">Products</a>
+          <a href="#" class="hd-tab ld-tab hd-notice">Price Books</a>
+          <a href="#" class="hd-tab ld-tab hd-notice">Calendar</a>
+          <a href="#" class="hd-tab ld-tab hd-notice">Analytics</a>
+          <a href="#" class="hd-tab ld-tab hd-notice">Invoices</a>
+          <button type="button" class="hd-edit hd-notice" aria-label="Edit page">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#0b76d4" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z"/></svg>
+          </button>
+        </div>
+
+        <!-- Body: sidebar + main -->
+        <div class="hd-body">
+
+          <!-- Left sidebar (Sales active) -->
+          <nav class="hd-sidebar">
+            <a href="#" class="hd-nav" data-route="home-dashboard">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 3 3 10.2V21h6v-6h6v6h6V10.2z"/></svg></span>
+              <span class="hd-nav-tx">Home</span>
+            </a>
+            <a href="#" class="hd-nav" data-route="contacts">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm8 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm-8 2c-2.7 0-6 1.3-6 4v2h8v-2c0-1 .4-1.9 1.1-2.6A9 9 0 0 0 8 13zm8 0a8 8 0 0 0-1.6.2A4.7 4.7 0 0 1 16 17v2h6v-2c0-2.7-3.3-4-6-4z"/></svg></span>
+              <span class="hd-nav-tx">Contacts</span>
+            </a>
+            <a href="#" class="hd-nav" data-route="accounts">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3h2a2 2 0 0 1 2 2v11zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm7-2h2v2h-2zm0 4h2v2h-2z"/></svg></span>
+              <span class="hd-nav-tx">Accounts</span>
+            </a>
+            <a href="#" class="hd-nav hd-nav-active" data-route="leads">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 18h3v-6H4zm6.5 0h3V6h-3zM17 18h3v-9h-3z"/></svg></span>
+              <span class="hd-nav-tx">Sales</span>
+            </a>
+            <a href="#" class="hd-nav" data-route="cases">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 21s-7-4.4-7-9.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7 4.5C19 16.6 12 21 12 21z"/></svg></span>
+              <span class="hd-nav-tx">Service</span>
+            </a>
+            <a href="#" class="hd-nav hd-notice">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 10v4h3l5 4V6L7 10zm12.5 2a3.5 3.5 0 0 0-2-3.2v6.4a3.5 3.5 0 0 0 2-3.2z"/></svg></span>
+              <span class="hd-nav-tx">Marketing</span>
+            </a>
+            <a href="#" class="hd-nav hd-notice">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7 18a2 2 0 1 0 2 2 2 2 0 0 0-2-2zm10 0a2 2 0 1 0 2 2 2 2 0 0 0-2-2zM5.2 4 4.7 6H20l-2.5 8H8L5.4 4H2v2h1.8z"/></svg></span>
+              <span class="hd-nav-tx">Commerce</span>
+            </a>
+            <a href="#" class="hd-nav hd-notice">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M3 5h8v6H3zm10 0h8v3h-8zm0 5h8v9h-8zM3 13h8v6H3z"/></svg></span>
+              <span class="hd-nav-tx">Your Account</span>
+            </a>
+          </nav>
+
+          <!-- Leads list view (reuses .ac-* list structure) -->
+          <main class="ac-main">
+            <div class="ac-list">
+
+              <!-- List header -->
+              <div class="ac-listhead">
+                <div class="ac-lh-left">
+                  <span class="ac-lh-icon ld-lh-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="#fff" d="M4 18h3v-6H4zm6.5 0h3V6h-3zM17 18h3v-9h-3z"/></svg></span>
+                  <div class="ac-lh-titles">
+                    <span class="ac-overline">Leads</span>
+                    <span class="ac-lh-row">
+                      <button type="button" class="ac-listview hd-notice">All Open Leads
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#080707" d="M7 10l5 5 5-5z"/></svg>
+                      </button>
+                      <button type="button" class="ac-pin hd-notice" aria-label="Pin list view">
+                        <svg viewBox="0 0 24 24" width="14" height="14"><path fill="#0b76d4" d="M14 4V2H6v2h2v6l-2 2v2h5v6l1 1 1-1v-6h5v-2l-2-2V4z"/></svg>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+                <div class="ac-lh-actions">
+                  <button type="button" class="ac-act-btn hd-notice">New</button>
+                  <button type="button" class="ac-act-btn hd-notice">Import</button>
+                  <button type="button" class="ac-act-btn hd-notice">Add to Campaign</button>
+                  <button type="button" class="ac-act-btn hd-notice">Send Email</button>
+                  <button type="button" class="ac-act-btn hd-notice">Change Owner</button>
+                </div>
+              </div>
+
+              <!-- Sub toolbar -->
+              <div class="ac-subbar">
+                <span class="ac-status">0 items &bull; Sorted by Name &bull; Filtered by All leads - Lead Status &bull; Updated a few seconds ago</span>
+                <div class="ac-tools">
+                  <div class="ac-search hd-notice">
+                    <svg viewBox="0 0 24 24" width="15" height="15"><path fill="#747474" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.49 4.49 0 0 1 9.5 14z"/></svg>
+                    <input type="text" placeholder="Search this list..." aria-label="Search this list" />
+                  </div>
+                  <button type="button" class="ac-tool hd-notice" aria-label="List view controls"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M19.4 13a7.5 7.5 0 0 0 0-2l2-1.6-2-3.4-2.4 1a7.3 7.3 0 0 0-1.7-1l-.4-2.5h-3.8l-.4 2.5a7.3 7.3 0 0 0-1.7 1l-2.4-1-2 3.4L4.6 11a7.5 7.5 0 0 0 0 2l-2 1.6 2 3.4 2.4-1a7.3 7.3 0 0 0 1.7 1l.4 2.5h3.8l.4-2.5a7.3 7.3 0 0 0 1.7-1l2.4 1 2-3.4zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg><svg class="ac-tool-mini" viewBox="0 0 24 24" width="11" height="11"><path fill="#0b76d4" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Display as table"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M3 5h18v4H3zm0 6h18v3H3zm0 5h18v3H3z"/></svg><svg class="ac-tool-mini" viewBox="0 0 24 24" width="11" height="11"><path fill="#0b76d4" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Refresh"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M17.65 6.35A8 8 0 1 0 19.73 14h-2.08A6 6 0 1 1 12 6a5.9 5.9 0 0 1 4.2 1.8L13 11h7V4z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Sort"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M8 4 4 9h3v7h2V9h3zm8 16 4-5h-3V8h-2v7h-3z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Edit"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Charts"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M11 3v18a9 9 0 0 1 0-18zm2 0a9 9 0 0 1 8 8h-8z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Filters"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M3 5h18l-7 8v6l-4-2v-4z"/></svg></button>
+                </div>
+              </div>
+
+              <!-- Table (8 data columns) -->
+              <div class="ac-table">
+                <div class="ac-thead ld-thead">
+                  <span class="ac-th ac-th-check"><input type="checkbox" class="hd-notice" aria-label="Select all" /></span>
+                  <button type="button" class="ac-th hd-notice">Name <span class="ac-sort">&uarr;</span></button>
+                  <button type="button" class="ac-th hd-notice">Company <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-th hd-notice">State/Province (&hellip; <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-th hd-notice">Phone <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-th hd-notice">Email <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-th hd-notice">Lead Status <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-th hd-notice">Created Date <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-th hd-notice">Owner Alias <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                </div>
+
+                <div class="ac-empty">
+                  <div class="ac-empty-illus ld-empty-illus">
+                    <span class="ac-illus-circle ld-illus-circle"></span>
+                    <span class="ld-illus-list"><u></u><u></u><u class="s"></u></span>
+                    <svg class="ld-illus-glass" viewBox="0 0 24 24" width="34" height="34"><circle cx="10" cy="10" r="7" fill="none" stroke="#5867c9" stroke-width="2.5"/><path stroke="#5867c9" stroke-width="3" stroke-linecap="round" d="M15 15l5 5"/></svg>
+                    <span class="ld-illus-star"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="#e2873b" d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.1l1-5.8-4.3-4.1 5.9-.9z"/></svg></span>
+                  </div>
+                  <h2 class="ac-empty-title">Focus on the right leads</h2>
+                  <p class="ac-empty-sub">Leads are potential customers and deals. Track progress and see which ones are most likely to close.</p>
+                  <button type="button" class="ac-addbtn hd-notice">Add a Lead</button>
+                </div>
+              </div>
+
+            </div>
+          </main>
+        </div>
+
+        <!-- Bottom utility bar (reused hd shell) -->
+        <footer class="hd-bottom">
+          <button type="button" class="hd-todo hd-notice">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#54698d" d="M3 5h2v2H3zm4 0h14v2H7zM3 11h2v2H3zm4 0h14v2H7zM3 17h2v2H3zm4 0h14v2H7z"/></svg>
+            <span>To Do List</span>
+          </button>
+        </footer>
+
+        <!-- Inline notice toast (approved "Not part of this prototype.") -->
+        <div class="hd-toast" id="ld-toast" hidden></div>
+
+      </div>
+    </section>
+    <!-- =================== END SCREEN: leads =================== -->
+
+    <!-- ===================== SCREEN: cases ===================== -->
+    <section class="screen" id="screen-cases" data-screen="cases">
+      <div class="hd-app">
+
+        <!-- Promo bar (reused hd shell) -->
+        <div class="hd-promo">
+          <div class="hd-promo-msg">
+            Don't wait: <strong>Save 70%</strong> now with code <strong>STARTER70</strong> | Terms apply.
+            <button type="button" class="hd-buynow hd-notice">Buy Now</button>
+          </div>
+          <div class="hd-promo-trial">Days left in your Trial: <span class="hd-trial-num">30</span></div>
+        </div>
+
+        <!-- Top navigation bar (reused hd shell) -->
+        <header class="hd-topnav">
+          <div class="hd-topnav-left">
+            <svg class="hd-cloud" viewBox="0 0 150 106" role="img" aria-label="Salesforce">
+              <g fill="#00A1E0">
+                <circle cx="58" cy="35" r="30"></circle>
+                <circle cx="99" cy="31" r="28"></circle>
+                <circle cx="125" cy="57" r="25"></circle>
+                <circle cx="27" cy="59" r="23"></circle>
+                <circle cx="45" cy="83" r="21"></circle>
+                <circle cx="75" cy="89" r="23"></circle>
+                <circle cx="104" cy="83" r="21"></circle>
+                <ellipse cx="76" cy="59" rx="51" ry="35"></ellipse>
+              </g>
+            </svg>
+          </div>
+
+          <div class="hd-search hd-notice">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#747474" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.49 4.49 0 0 1 9.5 14z"/></svg>
+            <input type="text" class="hd-search-input" placeholder="Search..." aria-label="Search" />
+          </div>
+
+          <div class="hd-topnav-right">
+            <button type="button" class="hd-icon hd-notice" aria-label="Agentforce">
+              <svg viewBox="0 0 24 24" width="22" height="22"><rect x="4" y="6" width="16" height="13" rx="5" fill="#3b3b6b"/><circle cx="9.5" cy="12.5" r="1.6" fill="#fff"/><circle cx="14.5" cy="12.5" r="1.6" fill="#fff"/><rect x="11" y="2.5" width="2" height="3.5" rx="1" fill="#3b3b6b"/><circle cx="12" cy="2.4" r="1.3" fill="#3b3b6b"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Cloud">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#3b3b6b" d="M19 18H6a4 4 0 0 1-.6-7.95A6 6 0 0 1 17 9a4.5 4.5 0 0 1 2 9z"/><path fill="#fff" d="M12 9l3 4H9z"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Help">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="#3b3b6b" stroke-width="2" d="M9.2 9a2.8 2.8 0 1 1 4.2 2.4c-.9.6-1.4 1.1-1.4 2.1"/><circle cx="12" cy="17.5" r="1.2" fill="#3b3b6b"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Settings">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#3b3b6b" d="M19.4 13a7.5 7.5 0 0 0 0-2l2-1.6-2-3.4-2.4 1a7.3 7.3 0 0 0-1.7-1l-.4-2.5h-3.8l-.4 2.5a7.3 7.3 0 0 0-1.7 1l-2.4-1-2 3.4L4.6 11a7.5 7.5 0 0 0 0 2l-2 1.6 2 3.4 2.4-1a7.3 7.3 0 0 0 1.7 1l.4 2.5h3.8l.4-2.5a7.3 7.3 0 0 0 1.7-1l2.4 1 2-3.4zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+            </button>
+            <button type="button" class="hd-icon hd-notice" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#3b3b6b" d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22zm6-6v-5a6 6 0 0 0-4.5-5.8V4.5a1.5 1.5 0 1 0-3 0v.7A6 6 0 0 0 6 11v5l-2 2v1h16v-1z"/></svg>
+            </button>
+            <div class="hd-profile-wrap">
+              <button type="button" class="hd-avatar" id="cs-profile-btn" aria-label="Profile">
+                <svg viewBox="0 0 24 24" width="34" height="34"><circle cx="12" cy="12" r="12" fill="#0b5cab"/><ellipse cx="12" cy="11" rx="6.5" ry="6" fill="#fff"/><circle cx="9.6" cy="11" r="1.5" fill="#0b5cab"/><circle cx="14.4" cy="11" r="1.5" fill="#0b5cab"/><ellipse cx="12" cy="14.2" rx="1.6" ry="1.1" fill="#0b5cab"/></svg>
+              </button>
+              <div class="hd-profile-menu" id="cs-profile-menu" hidden>
+                <button type="button" class="hd-profile-logout" id="cs-logout">Logout</button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Service app tab row -->
+        <div class="hd-tabrow ld-tabrow">
+          <span class="hd-appname">Service</span>
+          <a href="#" class="hd-tab hd-tab-active ld-tab" data-route="cases">Cases</a>
+          <a href="#" class="hd-tab ld-tab" data-route="contacts">Contacts</a>
+          <a href="#" class="hd-tab ld-tab" data-route="accounts">Accounts</a>
+          <a href="#" class="hd-tab ld-tab hd-notice">Quick Text</a>
+          <a href="#" class="hd-tab ld-tab hd-notice">Analytics</a>
+          <a href="#" class="hd-tab ld-tab hd-notice">Knowledge</a>
+          <button type="button" class="hd-edit hd-notice" aria-label="Edit page">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#0b76d4" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z"/></svg>
+          </button>
+        </div>
+
+        <!-- Body: sidebar + main -->
+        <div class="hd-body">
+
+          <!-- Left sidebar (Service active) -->
+          <nav class="hd-sidebar">
+            <a href="#" class="hd-nav" data-route="home-dashboard">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 3 3 10.2V21h6v-6h6v6h6V10.2z"/></svg></span>
+              <span class="hd-nav-tx">Home</span>
+            </a>
+            <a href="#" class="hd-nav" data-route="contacts">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm8 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm-8 2c-2.7 0-6 1.3-6 4v2h8v-2c0-1 .4-1.9 1.1-2.6A9 9 0 0 0 8 13zm8 0a8 8 0 0 0-1.6.2A4.7 4.7 0 0 1 16 17v2h6v-2c0-2.7-3.3-4-6-4z"/></svg></span>
+              <span class="hd-nav-tx">Contacts</span>
+            </a>
+            <a href="#" class="hd-nav" data-route="accounts">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3h2a2 2 0 0 1 2 2v11zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm7-2h2v2h-2zm0 4h2v2h-2z"/></svg></span>
+              <span class="hd-nav-tx">Accounts</span>
+            </a>
+            <a href="#" class="hd-nav" data-route="leads">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 18h3v-6H4zm6.5 0h3V6h-3zM17 18h3v-9h-3z"/></svg></span>
+              <span class="hd-nav-tx">Sales</span>
+            </a>
+            <a href="#" class="hd-nav hd-nav-active" data-route="cases">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 21s-7-4.4-7-9.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7 4.5C19 16.6 12 21 12 21z"/></svg></span>
+              <span class="hd-nav-tx">Service</span>
+            </a>
+            <a href="#" class="hd-nav hd-notice">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 10v4h3l5 4V6L7 10zm12.5 2a3.5 3.5 0 0 0-2-3.2v6.4a3.5 3.5 0 0 0 2-3.2z"/></svg></span>
+              <span class="hd-nav-tx">Marketing</span>
+            </a>
+            <a href="#" class="hd-nav hd-notice">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7 18a2 2 0 1 0 2 2 2 2 0 0 0-2-2zm10 0a2 2 0 1 0 2 2 2 2 0 0 0-2-2zM5.2 4 4.7 6H20l-2.5 8H8L5.4 4H2v2h1.8z"/></svg></span>
+              <span class="hd-nav-tx">Commerce</span>
+            </a>
+            <a href="#" class="hd-nav hd-notice">
+              <span class="hd-nav-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M3 5h8v6H3zm10 0h8v3h-8zm0 5h8v9h-8zM3 13h8v6H3z"/></svg></span>
+              <span class="hd-nav-tx">Your Account</span>
+            </a>
+          </nav>
+
+          <!-- Cases list view (reuses .ac-* list structure) -->
+          <main class="ac-main">
+            <div class="ac-list">
+
+              <!-- List header -->
+              <div class="ac-listhead">
+                <div class="ac-lh-left">
+                  <span class="ac-lh-icon cs-lh-icon"><svg viewBox="0 0 24 24" width="22" height="22"><rect x="5" y="7" width="14" height="11" rx="2" fill="#fff"/><path fill="#fff" d="M9 7V6a3 3 0 0 1 6 0v1h-2V6a1 1 0 0 0-2 0v1z"/></svg></span>
+                  <div class="ac-lh-titles">
+                    <span class="ac-overline">Cases</span>
+                    <span class="ac-lh-row">
+                      <button type="button" class="ac-listview hd-notice">All Open Cases
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#080707" d="M7 10l5 5 5-5z"/></svg>
+                      </button>
+                      <button type="button" class="ac-pin hd-notice" aria-label="Pin list view">
+                        <svg viewBox="0 0 24 24" width="14" height="14"><path fill="#0b76d4" d="M14 4V2H6v2h2v6l-2 2v2h5v6l1 1 1-1v-6h5v-2l-2-2V4z"/></svg>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+                <div class="ac-lh-actions">
+                  <button type="button" class="ac-act-btn hd-notice">New</button>
+                  <button type="button" class="ac-act-btn hd-notice">Change Owner</button>
+                  <button type="button" class="ac-act-btn hd-notice">Merge Cases</button>
+                  <button type="button" class="ac-act-btn hd-notice">Printable View</button>
+                  <button type="button" class="ac-act-btn hd-notice">Assign Label</button>
+                </div>
+              </div>
+
+              <!-- Sub toolbar -->
+              <div class="ac-subbar">
+                <span class="ac-status">0 items &bull; Sorted by Case Number &bull; Filtered by All cases - Closed, Date/Time Opened &bull; Updated a few seconds ago</span>
+                <div class="ac-tools">
+                  <div class="ac-search hd-notice">
+                    <svg viewBox="0 0 24 24" width="15" height="15"><path fill="#747474" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.49 4.49 0 0 1 9.5 14z"/></svg>
+                    <input type="text" placeholder="Search this list..." aria-label="Search this list" />
+                  </div>
+                  <button type="button" class="ac-tool hd-notice" aria-label="List view controls"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M19.4 13a7.5 7.5 0 0 0 0-2l2-1.6-2-3.4-2.4 1a7.3 7.3 0 0 0-1.7-1l-.4-2.5h-3.8l-.4 2.5a7.3 7.3 0 0 0-1.7 1l-2.4-1-2 3.4L4.6 11a7.5 7.5 0 0 0 0 2l-2 1.6 2 3.4 2.4-1a7.3 7.3 0 0 0 1.7 1l.4 2.5h3.8l.4-2.5a7.3 7.3 0 0 0 1.7-1l2.4 1 2-3.4zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg><svg class="ac-tool-mini" viewBox="0 0 24 24" width="11" height="11"><path fill="#0b76d4" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Display as table"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M3 5h18v4H3zm0 6h18v3H3zm0 5h18v3H3z"/></svg><svg class="ac-tool-mini" viewBox="0 0 24 24" width="11" height="11"><path fill="#0b76d4" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Refresh"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M17.65 6.35A8 8 0 1 0 19.73 14h-2.08A6 6 0 1 1 12 6a5.9 5.9 0 0 1 4.2 1.8L13 11h7V4z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Sort"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M8 4 4 9h3v7h2V9h3zm8 16 4-5h-3V8h-2v7h-3z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Edit"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Charts"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M11 3v18a9 9 0 0 1 0-18zm2 0a9 9 0 0 1 8 8h-8z"/></svg></button>
+                  <button type="button" class="ac-tool hd-notice" aria-label="Filters"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#0b76d4" d="M3 5h18l-7 8v6l-4-2v-4z"/></svg></button>
+                </div>
+              </div>
+
+              <!-- Table (7 data columns) -->
+              <div class="ac-table">
+                <div class="ac-thead cs-thead">
+                  <span class="ac-th ac-th-check"><input type="checkbox" class="hd-notice" aria-label="Select all" /></span>
+                  <button type="button" class="ac-th hd-notice">Case Number <span class="ac-sort">&uarr;</span></button>
+                  <button type="button" class="ac-th hd-notice">Contact Name <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-th hd-notice">Subject <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-th hd-notice">Status <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-th hd-notice">Priority <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-th hd-notice">Date/Time Opened <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                  <button type="button" class="ac-th hd-notice">Case Owner Alias <svg viewBox="0 0 24 24" width="12" height="12"><path fill="#706e6b" d="M7 10l5 5 5-5z"/></svg></button>
+                </div>
+
+                <div class="ac-empty">
+                  <div class="ac-empty-illus cs-empty-illus">
+                    <span class="ac-illus-circle cs-illus-circle"></span>
+                    <span class="cs-illus-bubble"><u></u><u></u><u class="s"></u></span>
+                    <span class="cs-illus-headset"><svg viewBox="0 0 24 24" width="30" height="30"><path fill="none" stroke="#5867c9" stroke-width="2.4" d="M5 13v-1a7 7 0 0 1 14 0v1"/><rect x="3.5" y="13" width="3.5" height="6" rx="1.5" fill="#5867c9"/><rect x="17" y="13" width="3.5" height="6" rx="1.5" fill="#5867c9"/><path fill="none" stroke="#5867c9" stroke-width="2.4" d="M19 19a4 4 0 0 1-4 3h-2"/></svg></span>
+                  </div>
+                  <h2 class="ac-empty-title">Track customer support in one place</h2>
+                  <p class="ac-empty-sub">Cases bring together customer questions, feedback, and issues from any channel.</p>
+                  <button type="button" class="ac-addbtn hd-notice">Add a Case</button>
+                </div>
+              </div>
+
+            </div>
+          </main>
+        </div>
+
+        <!-- Bottom utility bar (reused hd shell) -->
+        <footer class="hd-bottom">
+          <button type="button" class="hd-todo hd-notice">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#54698d" d="M3 5h2v2H3zm4 0h14v2H7zM3 11h2v2H3zm4 0h14v2H7zM3 17h2v2H3zm4 0h14v2H7z"/></svg>
+            <span>To Do List</span>
+          </button>
+        </footer>
+
+        <!-- Inline notice toast (approved "Not part of this prototype.") -->
+        <div class="hd-toast" id="cs-toast" hidden></div>
+
+      </div>
+    </section>
+    <!-- =================== END SCREEN: cases =================== -->
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
